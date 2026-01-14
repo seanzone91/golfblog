@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      {% if page.title %}
+        {{ page.title }} · {{ site.title }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </title>
+
+    <style>
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 18px;
+        line-height: 1.65;
+        color: #222;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+      }
+
+      header a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      nav a {
+        margin-left: 14px;
+        font-size: 14px;
+      }
+
+      main h1 {
+        margin-top: 0;
+      }
+
+      footer {
+        margin-top: 64px;
+        padding-top: 16px;
+        border-top: 1px solid #e5e5e5;
+        font-size: 14px;
+        color: #666;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <a href="{{ '/' | relative_url }}">
+          <strong>{{ site.title }}</strong>
+        </a>
+      </div>
+
+      <nav>
+        <a href="{{ '/de/' | relative_url }}">DE</a>
+        <a href="{{ '/en/' | relative_url }}">EN</a>
+      </nav>
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>
+      © {{ "now" | date: "%Y" }} {{ site.title }}
+    </footer>
+  </body>
+</html>
