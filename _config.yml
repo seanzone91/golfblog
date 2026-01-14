@@ -1,0 +1,8 @@
+title: Mein Golfblog
+description: Training, Strategie, Platzberichte und digitale Golf-Tools.
+
+url: "https://seanzone91.github.io
+"
+baseurl: "/golfblog"
+
+markdown: kramdown
