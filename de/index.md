@@ -16,4 +16,16 @@ Hier teile ich praxisnahe Notizen zu Training, Strategie und Platzmanagement –
 - Tools & digitale Produkte (z. B. Scorecards)
 
 ## Neueste Beiträge
-(kommt als nächstes – sobald wir die Blog-Struktur angelegt haben)
+
+{% assign posts_de = site.posts | where: "lang", "de" %}
+
+<ul>
+  {% for post in posts_de limit: 5 %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <small> – {{ post.date | date: "%d.%m.%Y" }}</small>
+    </li>
+  {% endfor %}
+</ul>
+
+[Alle Beiträge ansehen]({{ '/de/blog/' | relative_url }})
