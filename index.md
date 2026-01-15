@@ -3,12 +3,10 @@ layout: default
 title: Start
 ---
 
-# Willkommen auf meinem Golfblog
+<script>
+  window.location.href = "{{ '/de/' | relative_url }}";
+</script>
 
-Dies ist die Startseite meiner Website.  
-Sie wird von **Jekyll** gebaut und nutzt ein zentrales Layout.
+Wenn du nicht automatisch weitergeleitet wirst, klicke hier:
+[Zur deutschen Startseite]({{ '/de/' | relative_url }})
 
-Hier entstehen:
-- Artikel zu Training und Strategie
-- Platznotizen
-- digitale Golf-Tools
