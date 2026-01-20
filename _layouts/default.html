@@ -62,9 +62,25 @@
       </div>
 
       <nav>
-        <a href="{{ '/de/' | relative_url }}">DE</a>
-        <a href="{{ '/en/' | relative_url }}">EN</a>
-      </nav>
+  {% if page.lang == "en" %}
+    <a href="{{ '/en/' | relative_url }}">Home</a>
+    <a href="{{ '/en/blog/' | relative_url }}">Blog</a>
+    <a href="{{ '/en/tools/' | relative_url }}">Tools</a>
+    <a href="{{ '/en/about/' | relative_url }}">About</a>
+    <a href="{{ '/en/contact/' | relative_url }}">Contact</a>
+    <span style="margin-left: 10px;"></span>
+    <a href="{{ '/de/' | relative_url }}">DE</a>
+  {% else %}
+    <a href="{{ '/de/' | relative_url }}">Start</a>
+    <a href="{{ '/de/blog/' | relative_url }}">Blog</a>
+    <a href="{{ '/de/tools/' | relative_url }}">Tools</a>
+    <a href="{{ '/de/ueber-mich/' | relative_url }}">Über mich</a>
+    <a href="{{ '/de/kontakt/' | relative_url }}">Kontakt</a>
+    <span style="margin-left: 10px;"></span>
+    <a href="{{ '/en/' | relative_url }}">EN</a>
+  {% endif %}
+</nav>
+
     </header>
 
     <<main>
