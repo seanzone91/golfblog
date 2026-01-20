@@ -67,9 +67,36 @@
       </nav>
     </header>
 
-    <main>
-      {{ content }}
-    </main>
+    <<main>
+  {% if page.ref %}
+    {% assign siblings = site.posts | where: "ref", page.ref %}
+    {% assign alt_de = siblings | where: "lang", "de" | first %}
+    {% assign alt_en = siblings | where: "lang", "en" | first %}
+
+    <div style="margin: 0 0 18px 0; padding: 10px 12px; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 14px;">
+      {% if page.lang == "de" %}
+        <strong>Sprache:</strong>
+        <span>Deutsch</span>
+        {% if alt_en %}
+          · <a href="{{ alt_en.url | relative_url }}">English</a>
+        {% else %}
+          · <span style="color:#666;">English (noch nicht verfügbar)</span>
+        {% endif %}
+      {% else %}
+        <strong>Language:</strong>
+        <span>English</span>
+        {% if alt_de %}
+          · <a href="{{ alt_de.url | relative_url }}">Deutsch</a>
+        {% else %}
+          · <span style="color:#666;">Deutsch (not available yet)</span>
+        {% endif %}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {{ content }}
+</main>
+
 
     <footer>
       © {{ "now" | date: "%Y" }} {{ site.title }}
